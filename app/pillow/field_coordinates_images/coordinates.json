@@ -1,0 +1,84 @@
+{
+  "front": {
+    "image_size": {
+      "width": 2037,
+      "height": 1385
+    },
+    "fields": {
+      "name": {
+        "x": 826,
+        "y": 370,
+        "width": 1147,
+        "height": 115
+      },
+      "cpf": {
+        "x": 822,
+        "y": 677,
+        "width": 647,
+        "height": 93
+      },
+      "sex": {
+        "x": 1750,
+        "y": 676,
+        "width": 175,
+        "height": 91
+      },
+      "date_of_birth": {
+        "x": 822,
+        "y": 805,
+        "width": 612,
+        "height": 75
+      },
+      "nationality": {
+        "x": 1459,
+        "y": 804,
+        "width": 468,
+        "height": 76
+      },
+      "naturality": {
+        "x": 822,
+        "y": 918,
+        "width": 614,
+        "height": 80
+      },
+      "expirity": {
+        "x": 1460,
+        "y": 918,
+        "width": 481,
+        "height": 80
+      }
+    }
+  },
+  "back": {
+    "image_size": {
+      "width": 993,
+      "height": 692
+    },
+    "fields": {
+      "filliation": {
+        "x": 347,
+        "y": 127,
+        "width": 510,
+        "height": 108
+      },
+      "card_issuer": {
+        "x": 348,
+        "y": 260,
+        "width": 326,
+        "height": 59
+      },
+      "place_of_issue": {
+        "x": 348,
+        "y": 341,
+        "width": 254,
+        "height": 53
+      },
+      "issued_date": {
+        "x": 631,
+        "y": 339,
+        "width": 225,
+        "height": 56
+      }
+    }
+  }
+}

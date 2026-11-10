@@ -1,0 +1,170 @@
+{
+  "image_size": {
+    "width": 1000,
+    "height": 1414
+  },
+  "fields": {
+    "nome": {
+      "x": 277,
+      "y": 220,
+      "width": 444,
+      "height": 18
+    },
+    "cpf": {
+      "x": 347,
+      "y": 251,
+      "width": 310,
+      "height": 16
+    },
+    "matricula": {
+      "x": 277,
+      "y": 281,
+      "width": 454,
+      "height": 22
+    },
+    "data_nasci": {
+      "x": 86,
+      "y": 310,
+      "width": 605,
+      "height": 17
+    },
+    "dia": {
+      "x": 709,
+      "y": 310,
+      "width": 46,
+      "height": 17
+    },
+    "mes": {
+      "x": 776,
+      "y": 310,
+      "width": 50,
+      "height": 17
+    },
+    "ano": {
+      "x": 847,
+      "y": 310,
+      "width": 61,
+      "height": 17
+    },
+    "hor_nasci": {
+      "x": 86,
+      "y": 337,
+      "width": 239,
+      "height": 17
+    },
+    "municipio_natu": {
+      "x": 349,
+      "y": 337,
+      "width": 464,
+      "height": 17
+    },
+    "uf": {
+      "x": 834,
+      "y": 337,
+      "width": 74,
+      "height": 17
+    },
+    "local nascimento": {
+      "x": 86,
+      "y": 362,
+      "width": 298,
+      "height": 17
+    },
+    "municipio_nascimento": {
+      "x": 409,
+      "y": 362,
+      "width": 293,
+      "height": 17
+    },
+    "UFN": {
+      "x": 724,
+      "y": 362,
+      "width": 43,
+      "height": 17
+    },
+    "sexo": {
+      "x": 788,
+      "y": 362,
+      "width": 120,
+      "height": 17
+    },
+    "genitor": {
+      "x": 86,
+      "y": 398,
+      "width": 371,
+      "height": 17
+    },
+    "municipio_nas_geno": {
+      "x": 479,
+      "y": 398,
+      "width": 215,
+      "height": 17
+    },
+    "UF_geno": {
+      "x": 716,
+      "y": 398,
+      "width": 192,
+      "height": 17
+    },
+    "Avos_geno": {
+      "x": 86,
+      "y": 425,
+      "width": 822,
+      "height": 17
+    },
+    "Genitora": {
+      "x": 86,
+      "y": 456,
+      "width": 371,
+      "height": 17
+    },
+    "municipio_nas_gena": {
+      "x": 479,
+      "y": 456,
+      "width": 215,
+      "height": 17
+    },
+    "UF_gena": {
+      "x": 716,
+      "y": 456,
+      "width": 192,
+      "height": 17
+    },
+    "Avos_gena": {
+      "x": 86,
+      "y": 486,
+      "width": 822,
+      "height": 17
+    },
+    "Gemeos": {
+      "x": 86,
+      "y": 523,
+      "width": 822,
+      "height": 31
+    },
+    "data_registro": {
+      "x": 86,
+      "y": 567,
+      "width": 441,
+      "height": 17
+    },
+    "dnv": {
+      "x": 546,
+      "y": 567,
+      "width": 362,
+      "height": 17
+    },
+    "averbacoes": {
+      "x": 86,
+      "y": 591,
+      "width": 822,
+      "height": 17
+    },
+    "anotacoes": {
+      "x": 86,
+      "y": 617,
+      "width": 822,
+      "height": 17
+    }
+  }
+}
