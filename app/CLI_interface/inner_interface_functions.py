@@ -255,35 +255,35 @@ def collect_custom_generation_input(
 ) -> CustomGenerationInput:
     reference_date = today if today is not None else date.today()
     name = _prompt_validated(
-        "What's the name?",
+        "Qual o nome?",
         _validate_name,
         input_fn=input_fn,
         output_fn=output_fn,
         sleep_fn=sleep_fn,
     )
     age, birth_date = _prompt_validated(
-        "What's the age (in years)?",
+        "Quantos anos possui(Apenas anos)?",
         lambda value: _validate_age(value, today=reference_date),
         input_fn=input_fn,
         output_fn=output_fn,
         sleep_fn=sleep_fn,
     )
     sex = _prompt_validated(
-        "What's the sex?",
+        "Qual o sexo?",
         _validate_sex,
         input_fn=input_fn,
         output_fn=output_fn,
         sleep_fn=sleep_fn,
     )
     state = _prompt_validated(
-        "What's the state (UF)?",
+        "Qual o estado(A sigla em maiúsculo)?",
         _validate_state,
         input_fn=input_fn,
         output_fn=output_fn,
         sleep_fn=sleep_fn,
     )
     city = _prompt_validated(
-        "What's the city?",
+        "Qual será a cidade?",
         _validate_city,
         input_fn=input_fn,
         output_fn=output_fn,
@@ -310,11 +310,11 @@ def select_family_members(
     children = 0
     for _ in range(MAX_INVALID_INPUT_ATTEMPTS):
         clear_options = [
-            f"{_menu_option('1 - Add Parent', parents == 2)}",
-            f"{_menu_option('2 - Add Spouse', spouse)}",
-            f"{_menu_option('3 - Add Son', False)}",
-            "4 - Clear all",
-            "5 - Proceed",
+            f"{_menu_option('1 - Adicionar Pais', parents == 2)}",
+            f"{_menu_option('2 - Adicionar Cônjugue', spouse)}",
+            f"{_menu_option('3 - Adicionar Filho', False)}",
+            "4 - Limpar tudo",
+            "5 - Prosseguir",
         ]
         clear_screen()
         output_fn("=" * 43)
@@ -324,23 +324,23 @@ def select_family_members(
         if parents or spouse or children:
             members = []
             if parents:
-                members.append(f"{parents} Parent" + ("s" if parents != 1 else ""))
+                members.append(f"{parents} Pai" + ("s" if parents != 1 else ""))
             if spouse:
-                members.append("1 Spouse")
+                members.append("1 Cônjugue")
             if children:
-                members.append(f"{children} Son" + ("s" if children != 1 else ""))
-            output_fn(f"Current family: {', '.join(members)}")
+                members.append(f"{children} Filho" + ("s" if children != 1 else ""))
+            output_fn(f"Família atual: {', '.join(members)}")
         output_fn(">> ", end="", flush=True)
         choice = input_fn().strip()
 
         if choice == "1":
             if parents == 2:
-                _show_family_error("Option Limit Reached!", output_fn, sleep_fn)
+                _show_family_error("Limite de pais atingido!", output_fn, sleep_fn)
             else:
                 parents += 1
         elif choice == "2":
             if spouse:
-                _show_family_error("Option Limit Reached!", output_fn, sleep_fn)
+                _show_family_error("Limite de cônjugue atingido! Geramos apenas esposas e maridos fiéis.", output_fn, sleep_fn)
             else:
                 spouse = True
         elif choice == "3":
@@ -354,11 +354,11 @@ def select_family_members(
         else:
             _show_family_error("Invalid data!", output_fn, sleep_fn)
     display_page(
-        "Too many invalid attempts. Returning to menu.",
+        "Muitas tentatívas inválidas, voltando apra o menu.",
         output_fn=output_fn,
     )
     raise InputRetryLimitError(
-        f"Family selection remained invalid after "
+        f"Seleção de família mermaneceu inválida após "
         f"{MAX_INVALID_INPUT_ATTEMPTS} attempts."
     )
 
@@ -368,7 +368,7 @@ def _menu_option(label: str, limit_reached: bool) -> str:
         return label
     gray = "\033[38;2;134;142;150m"
     reset = "\033[0m"
-    return f"{gray}{label}{reset} (Max Limit Reached)"
+    return f"{gray}{label}{reset} (Limite máximo atingido)"
 
 
 def _show_family_error(
@@ -411,24 +411,24 @@ def collect_custom_family_member_input(
         )
 
     name = prompt_optional(
-        f"What's the name for {role}?",
+        f"Qual o nome {role}?",
         lambda value: _validate_name(
             value, min_words=name_min_words, max_words=name_max_words
         ),
     )
 
-    age_question = "What's the age (in years)?"
+    age_question = "Qual a idade (em anos)?"
     if min_age is not None:
-        age_question += f"(Min age {min_age})"
+        age_question += f"(Idade mínima {min_age})"
     if max_age is not None:
-        age_question += f"(Max age {max_age})"
+        age_question += f"(Idade máxima {max_age})"
 
     def validate_age(value: str) -> int:
         age, _ = _validate_age(value, today=date.today())
         if min_age is not None and age < min_age:
-            raise InvalidInputError("Invalid data!")
+            raise InvalidInputError("Dado inválido!")
         if max_age is not None and age > max_age:
-            raise InvalidInputError("Invalid data!")
+            raise InvalidInputError("Dado inválido!")
         return age
 
     age = prompt_optional(age_question, validate_age)
@@ -436,12 +436,12 @@ def collect_custom_family_member_input(
         lower_bound = min_age if min_age is not None else 18
         upper_bound = max_age if max_age is not None else 90
         if lower_bound > upper_bound:
-            raise InvalidInputError("Invalid data!")
+            raise InvalidInputError("Dado inválido!")
         age = random_source.randint(lower_bound, upper_bound)
 
-    sex = prompt_optional("What's the sex (M or F)?", _validate_sex)
-    state = prompt_optional("What's the state (UF)?", _validate_state)
-    city = prompt_optional("What's the city?", _validate_city)
+    sex = prompt_optional("Qual o sexo (M or F)?", _validate_sex)
+    state = prompt_optional("Qual o estado (UF)?", _validate_state)
+    city = prompt_optional("Qual a cidade?", _validate_city)
     return FamilyMemberInput(
         name=name,
         age=age,
@@ -460,7 +460,7 @@ def collect_custom_family_inputs(
 ) -> tuple[FamilyMemberInput, ...]:
     members: list[FamilyMemberInput] = []
     titular = collect_custom_family_member_input(
-        "titular",
+        "do titular",
         input_fn=input_fn,
         output_fn=output_fn,
         sleep_fn=sleep_fn,
@@ -473,7 +473,7 @@ def collect_custom_family_inputs(
     spouse: FamilyMemberInput | None = None
     if selection.spouse:
         spouse = collect_custom_family_member_input(
-            "spouse",
+            "do cônjugue",
             input_fn=input_fn,
             output_fn=output_fn,
             sleep_fn=sleep_fn,
@@ -485,7 +485,7 @@ def collect_custom_family_inputs(
     for parent_number in range(selection.parents):
         members.append(
             collect_custom_family_member_input(
-                f"parent {parent_number + 1}",
+                f"do seu pai ou mãe {parent_number + 1}",
                 input_fn=input_fn,
                 output_fn=output_fn,
                 sleep_fn=sleep_fn,
@@ -506,7 +506,7 @@ def collect_custom_family_inputs(
             raise InvalidInputError("Invalid data!")
         members.append(
             collect_custom_family_member_input(
-                f"son {child_number + 1}",
+                f"Filho(a) {child_number + 1}",
                 input_fn=input_fn,
                 output_fn=output_fn,
                 sleep_fn=sleep_fn,

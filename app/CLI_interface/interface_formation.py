@@ -48,8 +48,8 @@ def select_generation_mode(
     for _ in range(MAX_INVALID_INPUT_ATTEMPTS):
         clear_screen()
         output_fn(_BORDER)
-        output_fn("1 - Random Generation")
-        output_fn("2 - Custom Generation")
+        output_fn("1 - Geração Randomizada")
+        output_fn("2 - Geração Customizada")
         output_fn(_BORDER)
         output_fn(">> ", end="", flush=True)
         choice = input_fn().strip()
