@@ -1,0 +1,118 @@
+{
+  "document": {
+    "image_size": {
+      "width": 800,
+      "height": 1035
+    },
+    "fields": {
+      "nome_ma": {
+        "x": 84,
+        "y": 272,
+        "width": 398,
+        "height": 33
+      },
+      "cpf_ma": {
+        "x": 488,
+        "y": 272,
+        "width": 247,
+        "height": 33
+      },
+      "nome_es": {
+        "x": 84,
+        "y": 316,
+        "width": 398,
+        "height": 33
+      },
+      "cpf_es": {
+        "x": 488,
+        "y": 316,
+        "width": 247,
+        "height": 33
+      },
+      "matricula": {
+        "x": 221,
+        "y": 372,
+        "width": 382,
+        "height": 33
+      },
+      "data_registro": {
+        "x": 82,
+        "y": 528,
+        "width": 536,
+        "height": 16
+      },
+      "dia": {
+        "x": 625,
+        "y": 528,
+        "width": 29,
+        "height": 16
+      },
+      "mes": {
+        "x": 660,
+        "y": 528,
+        "width": 29,
+        "height": 16
+      },
+      "ano": {
+        "x": 697,
+        "y": 528,
+        "width": 38,
+        "height": 16
+      },
+      "regime_bens": {
+        "x": 84,
+        "y": 560,
+        "width": 651,
+        "height": 41
+      },
+      "nome_conjuges": {
+        "x": 84,
+        "y": 618,
+        "width": 652,
+        "height": 41
+      },
+      "averbacoes": {
+        "x": 85,
+        "y": 671,
+        "width": 652,
+        "height": 65
+      },
+      "numero_h": {
+        "x": 227,
+        "y": 781,
+        "width": 133,
+        "height": 20
+      },
+      "data_h": {
+        "x": 364,
+        "y": 781,
+        "width": 94,
+        "height": 20
+      },
+      "data_val_h": {
+        "x": 606,
+        "y": 780,
+        "width": 117,
+        "height": 20
+      },
+      "numero_m": {
+        "x": 227,
+        "y": 847,
+        "width": 133,
+        "height": 20
+      },
+      "data_m": {
+        "x": 364,
+        "y": 847,
+        "width": 95,
+        "height": 20
+      },
+      "data_val_m": {
+        "x": 608,
+        "y": 847,
+        "width": 117,
+        "height": 20
+      }
+    }
+  }
+}
