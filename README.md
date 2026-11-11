@@ -2,7 +2,7 @@
 
 Um programa responsável por gerar famílias inteiras e os documentos de cada uma dessas pessoas, simulando uma família.
 
-Atualmente o programa é capaz de gerar 4 documentos: CIN, CNH, certidão de casamento(quando gerado casais), certidão de nascimento e um comprovante de residência extremamente simples.
+Atualmente o programa é capaz de gerar 4 tipos de documentos: CIN, CNH, certidão de casamento(quando gerado casais), certidão de nascimento e um comprovante de residência extremamente simples.
 
 ## Configuração inicial do programa
 
