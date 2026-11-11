@@ -8,7 +8,9 @@ Atualmente o programa é capaz de gerar 4 tipos de documentos: CIN, CNH, certid�
 
 Nesse site, em code, o botão azul no meio baixe o arquivo zip do programa
 
-Execute `setup.bat` primeiro, ele irá realizar as configurações iniciais do programa e deixá-lo pronto para uso caso não saiba mexer com código
+Extraia a pasta do programa do arquivo .zip
+
+Execute `setup.bat` primeiro, ele irá realizar as configurações iniciais do programa e fechará e se excluirá sozinho após instalar tudo que é necessário, deixando o programa pronto para uso caso o usuário não saiba mexer com código
 
 CASO a disconfiança for grande e sabe mexer no código de forma alternativa você pode apenas rodar terminal do programa:
 
