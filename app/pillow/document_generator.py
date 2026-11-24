@@ -34,6 +34,15 @@ class FamilyDocumentResult:
     last_document_paths: tuple[Path, ...] = ()
 
 
+def _cnh_validity_years(birth_date: date, issue_date: date) -> int:
+    age_at_issue = _age_on(birth_date, issue_date)
+    if age_at_issue >= 70:
+        return 3
+    if age_at_issue >= 50:
+        return 5
+    return 10
+
+
 def _list_field_values(
     person: CINSchema,
     *,
@@ -44,20 +53,23 @@ def _list_field_values(
     if twentieth_birthday > today:
         raise ValueError("List generation requires the person to be at least 20.")
 
+    # 1. Gera a data da 1ª habilitação
     first_hab_date = date.fromordinal(
         rng.randint(twentieth_birthday.toordinal(), today.toordinal())
     )
-    earliest_c_val = _add_years(first_hab_date, 10)
-    latest_c_val = _add_years(today, 10)
-    c_val = date.fromordinal(
-        rng.randint(earliest_c_val.toordinal(), latest_c_val.toordinal())
+
+    # 2. Define a janela de emissão (usando a validade atual como limite para trás)    
+    current_validity = _cnh_validity_years(person.date_of_birth, today)
+    min_issue_date = max(first_hab_date, _add_years(today, -(current_validity - 1)))
+    
+    issue_date = date.fromordinal(
+        rng.randint(min_issue_date.toordinal(), today.toordinal())
     )
 
-    candidate_issue_date = date.fromordinal(
-        rng.randint(twentieth_birthday.toordinal(), today.toordinal())
-    )
-    interval_years = max(0, _age_on(first_hab_date, candidate_issue_date) // 10 * 10)
-    issue_date = _add_years(first_hab_date, interval_years)
+    # 3. Calcula a validade (c_val) exatamente a partir do issue_date e da idade na época
+    validity_years = _cnh_validity_years(person.date_of_birth, issue_date)
+    c_val = _add_years(issue_date, validity_years)
+
     uf = person.naturality.rsplit("/", 1)[-1]
 
     front_fields: dict[str, object] = {
@@ -79,6 +91,7 @@ def _list_field_values(
         "issue_date": issue_date,
     }
     return front_fields, back_fields
+
 
 
 def generate_document(
