@@ -68,8 +68,8 @@ FONT_PATHS = (
     "ariblk.ttf",
 )
 FACE_STYLES = {
-    "front": {"font_size": 26, "color": "#303030"},
-    "back": {"font_size": 14, "color": "#404040"},
+    "front": {"font_size": 30, "color": "#303030"},
+    "back": {"font_size": 16, "color": "#404040"},
 }
 MIN_FONT_SIZE = 6
 FACE_FIELDS = {
