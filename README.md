@@ -6,13 +6,13 @@ Atualmente o programa é capaz de gerar 5 tipos de documentos: CIN, CNH, certid�
 
 ## Configuração inicial do programa
 
-Nesse site, em code, o botão azul no meio baixe o arquivo zip do programa
+Nesse site, em `<> code`, baixe o arquivo zip do programa
 
 Extraia a pasta do programa do arquivo .zip
 
-Execute `setup.bat` primeiro, ele irá realizar as configurações iniciais do programa e fechará e se excluirá sozinho após instalar tudo que é necessário, deixando o programa pronto para uso caso o usuário não saiba mexer com código
+Execute `setup.bat` primeiro, ele irá realizar as configurações iniciais do programa, fechará e se excluirá sozinho após instalar tudo que é necessário, deixando o programa pronto para uso caso o usuário não saiba mexer com código
 
-CASO a disconfiança for grande e sabe mexer no código de forma alternativa você pode apenas rodar terminal do programa:
+CASO a disconfiança for grande e o usuário sabe mexer no código de forma alternativa você pode apenas rodar terminal do programa:
 
 ```bash
 py -m venv .venv
