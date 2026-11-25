@@ -2,13 +2,15 @@
 
 Um programa responsável por gerar famílias inteiras e os documentos de cada uma dessas pessoas, simulando uma família.
 
-Atualmente o programa é capaz de gerar 4 documentos: CIN, CNH, certidão de casamento(quando gerado casais), certidão de nascimento e um comprovante de residência extremamente simples.
+Atualmente o programa é capaz de gerar 4 tipos de documentos: CIN, CNH, certidão de casamento(quando gerado casais), certidão de nascimento e um comprovante de residência extremamente simples.
 
 ## Configuração inicial do programa
 
 Nesse site, em code, o botão azul no meio baixe o arquivo zip do programa
 
-Execute `setup.bat` primeiro, ele irá realizar as configurações iniciais do programa e deixá-lo pronto para uso caso não saiba mexer com código
+Extraia a pasta do programa do arquivo .zip
+
+Execute `setup.bat` primeiro, ele irá realizar as configurações iniciais do programa e fechará e se excluirá sozinho após instalar tudo que é necessário, deixando o programa pronto para uso caso o usuário não saiba mexer com código
 
 CASO a disconfiança for grande e sabe mexer no código de forma alternativa você pode apenas rodar terminal do programa:
 
@@ -25,7 +27,7 @@ python -m pip install
 ```
 
 ```bash
-pip install -r .requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Executando o programa
